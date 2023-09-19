@@ -84,10 +84,10 @@ fn add_two_numbers_with_carry(l1: Option<Box<ListNode>>, l2: Option<Box<ListNode
             return Some(Box::new(temp));
         },
         (None, None) => {
-            if carry > 0 {
-                return Some(Box::new(ListNode::new(carry)));
+            return if carry > 0 {
+                Some(Box::new(ListNode::new(carry)))
             } else {
-                return None;
+                None
             }
         }
     }
